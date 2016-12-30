@@ -18,7 +18,7 @@ class Board:
         return self.board[row,col]
 
     def set(self, row, col, value):
-[]        self.board[row,col] = value
+        self.board[row,col] = value
 
     def oppositeColor(self, color):
         """Return the opposite color"""
