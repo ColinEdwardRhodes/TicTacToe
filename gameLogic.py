@@ -4,7 +4,7 @@ import random
 
 
 class GameLogic:
-    """The board for the game and the solver functions"""
+    """The logic for the game"""
 
     def __init__(self):
         """ Constructor """

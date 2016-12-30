@@ -2,7 +2,7 @@ import numpy
 
 
 class Board:
-    """The board for the game and the solver functions"""
+    """The board for the game"""
 
     def empty(self):
         """ The empty cell """
