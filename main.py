@@ -1,4 +1,5 @@
 import gameBoard
+import gameLogic
 
 
 def run_loop():
@@ -8,24 +9,25 @@ def run_loop():
 
     pc = choose_color()
     board = gameBoard.Board()
+    game_logic = gameLogic.GameLogic();
 
     board.display()
 
     cc = pc
 
-    while not board.solved() and not board.deadlock():
+    while not game_logic.solved(board) and not game_logic.deadlock(board):
 
         if cc == pc:
             move = choose_move(board, cc)
             board.makeMove(move, cc)
         else:
-            board.computerMove(move, cc)
+            game_logic.computerMove(board, cc)
 
         board.display()
 
         cc = board.oppositeColor(cc)
 
-    if board.solved():
+    if game_logic.solved(board):
         print "We have a winner!"
     else:
         print "We have a deadlock!"
@@ -49,6 +51,6 @@ def choose_color():
     while color != "B" and color != "W":
         color = raw_input("Please Choose a Color (B or W)> ")
 
-    return color
+    return color[0]
 
 run_loop()
