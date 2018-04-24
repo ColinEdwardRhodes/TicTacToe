@@ -44,11 +44,11 @@ class Board:
         row = int(move[1])
 
         if row > 3 or row < 1:
-            print "Bad column value (must be between 1 and 3)"
+            print "Bad row value (must be between 1 and 3)"
             return False
 
         if col > 3 or col < 1:
-            print "Bad row value (must be between 1 and 3)"
+            print "Bad column value (must be between 1 and 3)"
             return False
 
         if self.get(row - 1, col - 1) != self.empty():
